@@ -7,28 +7,31 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Monitoreo de equipos heating
+ventilating air conditioned (HVAC) en
+laboratorio farmacéutico. } 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Federico Manuel Suarez Paris} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{A definir}
+\pertenenciaDirector{A definir} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+%
+\codirector{A DEFINIR} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Ing. Pablo Covello}
+\empresaCliente{Laboratorio Baliarda S.A.}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +41,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{25 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{26 de junio de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{18 de diciembre de 2023}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -68,8 +71,9 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+1      & Con avances hasta el punto 5                                 &\fechaInicioName 
+\\ \hline
+2      & Se completa hasta el punto 7 inclusive                 & 16 de mayo de 2023 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +96,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Lic. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en {la implementación de un prototipo de un sistema de monitoreo de equipos de HVAC en un laboratorio farmaceutico}, y tendrá un presupuesto preliminar estimado de {600} h de trabajo y {A DEFINIR}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,50 +120,62 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-
-El objetivo es que el lector en una o dos páginas entienda de qué trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
-
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cúal es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
+% El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
+En en la planta Santa Cruz de los Laboratorios Baliarda S.A., se dispone de 16 equipos de HVAC que se desean monitorear.\par 
+9 de estos equipos son del tipo \textit{Rooftop} y 7 son unidades manejadoras de aire.
+ En los días muy cálidos o muy fríos, estos equipos, tienden a salir de servicio por el accionamiento de alguna de sus seguridades. \par 
+Por ejemplo, en los días muy calurosos, con temperaturas superiores a 35°, puede ser que se accione un presostato de alta presión de gas de algún compresor (Gas Freon, R22, R407, R410). \par 
+En cambio, en los días muy fríos, con temperaturas inferiores a 6°, puede ser que se accione un presostato de baja presión de gas de algún compresor (Gas Freon, R22, R407, R410). \par 
+ Estas situaciones, en los equipos, se detectan en los sectores asociados, a los 30 minutos o hasta una hora después de que ocurrió el evento dentro del HVAC. \par 
+Como consecuencia, los sectores que dependen de los equipos en falla, deben detener la producción hasta normalizar la temperatura de trabajo del sector. \par 
+ Lo que se busca, en este proyecto, es tener una rápida respuesta ante un evento de falla en los equipos de HVAC para así minimizar las detenciones de los sectores productivos por exceso o falta de temperatura. \par 
+Por otro lado, se busca tener un historial para evaluar el comportamiento de los equipos durante el día y la noche.\par 
+Todo este proyecto estará a un repositorio* donde, el código fuente, podrá ser implementado en cualquier empresa o institución que lo requiera con la salvedad de que si el sistema es utilizado fuera de la empresa Baliarda S.A., no se podrán utilizar nombres de equipos, divulgar procesos o cualquiera otra información confidencial de Baliarda S.A. \par 
+Para el funcionamiento del sistema se utilizará un microcontrolador ESP32 en cada unidad a monitorear. Se diseñará una plaqueta donde tendrá montado el ESP32, la fuente de alimentación y 4 relays de 24 VCC que serán los encargados de enviar la señal de los estados al microcontrolador. Por otro lado, se diseñará un sistema de UPS*, en caso de corte de energía eléctrica, con 1 hora de autonomía.\par 
+Cada equipo tendrá un microcontrolador que reportará los datos a una base de datos relacional de Postgres en un servidor local.\par 
+Desde cualquier PC, dentro de la red del laboratorio y por exigencia de Baliarda S.A., se accederá a través de una página web (API) mostrando todos los HVAC y sus estados.\par 
+El ingreso se realizará mediante usuario y contraseña 2 (dos) niveles de acceso (Supervisor y Operador)
+El Operador, podrá ver las temperaturas, los estados y los históricos.
+El Supervisor tendrá el control total del sistema.
+La Clave de los usuarios expirara, mínimamente, cada 3 meses.
+Cada imagen tendrá un link donde se redirigirá al microcontrolador asociado a ese equipo.
+Dentro de cada imagen de HVAC se podrán realizar las siguientes operaciones:
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+\item Histórico de temperaturas y estados.
+\item Configuración de correos electrónicos para enviar alarmas.
+\item Mensajes de las alarmas.
+\item Configuración de Wi-Fi.
+\item Potencia de señal de Wi-Fi.
+\item SetPoint de temperatura.
 \end{itemize}
+La comunicación de todo el sistema deberá ser vía Wi-Fi. \par 
+La placa con el microcontrolador estará dentro de una caja plástica fabricada con materiales que no propaguen la llama. Esta caja, tendrá una señalización donde indique el estado de las entradas digitales, conexión con una red Wi-Fi y tensión del equipo. \par 
+Se fabricará un prototipo con su \textit{firmware} para 1 ESP32 con su placa y su caja, la programación y la visualización de los equipos HVAC.\par 
+En el siguiente diagrama se muestra como debe funcionar el sistema.\par
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
-\begin{figure}[htpb]
+\begin{figure}[H]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
+\includegraphics[width=1.1\textwidth]{./Figuras/DIAGRAMA_1.png}
+\caption{Diagrama en bloqes del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+
+
+
+
+GLOSARIO:
+*UPS: Uninterruptible Power System.
+*SetPoint: Punto de configuración.
+*Repositorio: espacio centralizado donde se guardan trabajos científicos, archivos, etc.
+
+
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
 
 
 \begin{table}[ht]
@@ -169,143 +185,146 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	&Gerente de ingenieria \\ \hline
+Impulsor      & Ing.Juan Cendron  &Balairda S.A.    & Jefe de mantenimiento \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & \empclientename   &\empclientename  &      -  	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
-
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+El proposito del presente proyecto es mejorar el control de los equipos HVAC de la planta.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+El alcance de este proyecto será:
+\begin{itemize}
+\item La creación un software de gestión de los HVAC.
+\item La creación del \textit{firmware} para el esp32.
+\item La fabricación de prototipo.
+\item 5 horas de asistencia técnica in situ.
+\item 5 horas de asistencia técnica a distancia. 
+\end{itemize}
+El presente proyecto no incluye:
+\begin{itemize}
+\item La fabricación de los dispositivos restantes.
+\item La instalación.
+\item La puesta en marcha. 
+\end{itemize}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
+
+
+
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item La Gerencia, Jefatura y Supervision de mantenimiento tendra un mejor control de los equipos HVAC de la planta.
+	\item El departamento de Garantia de calidad tendra mas datos para invertigar desvios producto de la falla de los HVAC.
+	\item Ajustar los mantenimientos preventivos de los equipos de HVAC.
+	\item Optimizar el uso de los HVAC.
+	\item Advertir a tiempo la falla de un equipo 
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
-
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El sistema debe poder manejar la visualizacion de del estado, las larmas y las temperaturas de los 16 equipos de aire acondicionado
+			\item los ESP32 de cada equipo se debe conectar con un equipo o servidor central para lograr almacenar los datos recolectados en una base de datos.
+			\item El usuario debe poder recolectar los datos guardados en la base de datos. Debe poder buscar datos por fecha y debera poder imprimir lo recolectado.
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Manual de programacion del \textit {firmware} del ESP32.
+			\item Manual de instalacion del ESP32.
+			\item Manual de uso del ESP32.
+			\item Manual de configuracion de la API.
+			\item Manual de configuracion de la base de datos.
+			\item Manual de uso de la API.
+			
+			
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimiento de testing del \textit{firmaware} de ESP32.
+	\item Requerimientos de testing de la interfaz grafica.
+	\item Requerimiento de testing de la seguridad del sistema.
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+Roles
+Operador:
+\begin{itemize}
+ \item Podrá ver todos los datos de la API. 
+ \item Podrá descargar históricos de la base de datos.
+ \item Podrá buscar datos.
+ \item Podrá imprimir datos seleccionados.
+\end{itemize}
+Supervisor:
+\begin{itemize}
+\item Podrá cargar los correos electronicos de los destinatarios de las alarmas.
+\item Podrá crear usuarios y la primera clave con su tiempo de expiración.
+\item Podrá configurar los setpoint de las alarmas.
+\item Podrá dar el alta/baja de dispositivos.
+\item Podrá asignar las direcciones IP de tlos dispositivos y base de datos.
+\end{itemize}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+
+\begin{table}[ht]
+%\caption{Identificación de los interesados}
+%\label{tab:interesados}
+\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+HISTORIAS DE USUARIOS & PONDERACION \\ \hline
+Como operador quiero saber el estado y la temperatura de los HVAC de la planta.  &    5 \\ \hline
+Como operador quiero cambiar el setpoint de los equipos desde la API.  & 1 \\ \hline
+Como operador quiero descargar e imprimir historicos.      	& 4	\\ \hline
+Como supervisor quiero modificar los parametros del sistema. 	&  3 \\ \hline
+Como supervisor quiero agregar nuevos equipos.  &  2 	\\ \hline
+\end{tabularx}
+\end{table}
+
+
+
+
 
 El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
 
 Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
 
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
 	\item Manual de uso
 	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
+	\item Código fuente del \textit{firmware} del ESP32.
+	\item Código fuente de la API.
+	\item Código fuente de la base de datos.
 	\item Diagrama de instalación
 	\item Informe final
 	\item etc...
 \end{itemize}
 
-\end{consigna}
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
