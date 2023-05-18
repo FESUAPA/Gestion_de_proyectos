@@ -128,9 +128,9 @@ Por ejemplo, en los días muy calurosos, con temperaturas superiores a 35°, pue
 En cambio, en los días muy fríos, con temperaturas inferiores a 6°, puede ser que se accione un presostato de baja presión de gas de algún compresor (Gas Freon, R22, R407, R410). \par 
  Estas situaciones, en los equipos, se detectan en los sectores asociados, a los 30 minutos o hasta una hora después de que ocurrió el evento dentro del HVAC. \par 
 Como consecuencia, los sectores que dependen de los equipos en falla, deben detener la producción hasta normalizar la temperatura de trabajo del sector. \par 
- Lo que se busca, en este proyecto, es tener una rápida respuesta ante un evento de falla en los equipos de HVAC para así minimizar las detenciones de los sectores productivos por exceso o falta de temperatura. \par 
+ Lo que propone este proyecto, es tener una rápida respuesta ante un evento de falla en los equipos de HVAC para así minimizar las detenciones de los sectores productivos por exceso o falta de temperatura. \par 
 Por otro lado, se busca tener un historial para evaluar el comportamiento de los equipos durante el día y la noche.\par 
-Todo este proyecto estará a un repositorio* donde, el código fuente, podrá ser implementado en cualquier empresa o institución que lo requiera con la salvedad de que si el sistema es utilizado fuera de la empresa Baliarda S.A., no se podrán utilizar nombres de equipos, divulgar procesos o cualquiera otra información confidencial de Baliarda S.A. \par 
+Este proyecto estará a un repositorio* donde, el código fuente, podrá ser implementado en cualquier empresa o institución que lo requiera con la salvedad de que si el sistema es utilizado fuera de la empresa Baliarda S.A., no se podrán utilizar nombres de equipos, divulgar procesos o cualquiera otra información confidencial de Baliarda S.A. \par 
 Para el funcionamiento del sistema se utilizará un microcontrolador ESP32 en cada unidad a monitorear. Se diseñará una plaqueta donde tendrá montado el ESP32, la fuente de alimentación y 4 relays de 24 VCC que serán los encargados de enviar la señal de los estados al microcontrolador. Por otro lado, se diseñará un sistema de UPS*, en caso de corte de energía eléctrica, con 1 hora de autonomía.\par 
 Cada equipo tendrá un microcontrolador que reportará los datos a una base de datos relacional de Postgres en un servidor local.\par 
 Desde cualquier PC, dentro de la red del laboratorio y por exigencia de Baliarda S.A., se accederá a través de una página web (API) mostrando todos los HVAC y sus estados.\par 
@@ -283,29 +283,57 @@ Supervisor:
 \end{itemize}
 
 
-\begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-HISTORIAS DE USUARIOS & PONDERACION \\ \hline
-Como operador quiero saber el estado y la temperatura de los HVAC de la planta.  &    5 \\ \hline
-Como operador quiero cambiar el setpoint de los equipos desde la API.  & 1 \\ \hline
-Como operador quiero descargar e imprimir historicos.      	& 4	\\ \hline
-Como supervisor quiero modificar los parametros del sistema. 	&  3 \\ \hline
-Como supervisor quiero agregar nuevos equipos.  &  2 	\\ \hline
-\end{tabularx}
-\end{table}
+Para asignar la ponderación a los \textit {story points} se han definido los siguientes criterios basados en la dificultad , complejidad y riesgo del trabajo a realizar. \par
+Dificultad del trabajo a realizar:
+\begin{itemize}
+ \item Bajo  = 1 
+ \item Medio = 3
+ \item Alto = 5
+\end{itemize}
+
+Complejidad del trabajo a realizar:
+\begin{itemize}
+ \item Bajo  = 1 
+ \item Medio = 3
+ \item Alto = 5
+\end{itemize}
+
+Riesgo del trabajo a realizar:
+
+\begin{itemize}
+ \item Bajo  = 1 
+ \item Medio = 3
+ \item Alto = 5
+\end{itemize}
+
+Historias de usuario 1: Como desarrollador quiero diseñar un sistema de monitoreo de equipos de HVAC en una planta farmacéutica.
+
+\begin{itemize}
+ \item Dificultad alta (5): Porque este sistema conlleva diseñar varios software y \textit {firmware}.
+ \item Complejidad media (3): Porque se requiere conocimientos de diseños de la API, Base de datos y programación de ESP32.
+ \item Riesgo medio (3): Durante el desarrollo y la implementación pueden surgir varios inconvenientes que se solucionaran en el momento que ocurran.
+\end{itemize}
+\textit {Story points} 13  (5 + 3 + 3 = 11 => 13) La ponderación es de 11 puntos. Al buscarlo en la serie de Fibonacci la ponderación es de 13 puntos.
+
+Historia de usuario 2: Como usuario quiero monitorear los equipos de HVAC desde una pc.
 
 
+\begin{itemize}
+ \item Dificultad bajo (1): El sistema me permite visualizar todos los datos de los equipos HVAC.
+ \item Complejidad media (3): Se requieren conocimientos de los equipos controlados para interpretar los datos recolectados por el sistema.
+ \item Riesgo bajo (1): Leer los datos recolectados no presenta ningún problema al sistema y a las instalaciones.
+\end{itemize}
 
+\textit {Story points} 5 (1 + 3 + 1 = 5 => 5) La ponderación es  de 5 puntos. Al buscarlo en la serie de Fibonacci el valor tambien es de 5 puntos.
 
+Historias de usuario 3: Como usuario quiero ajustar los setpoints de control de los HVAC.
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-
+\begin{itemize}
+ \item Dificultad alta (5): El sistema no me permite controlar los HVAC. Se requiere otro \textit {firmware} para el ESP32. 
+ \item Complejidad alta (5): Se requiere realizar un nuevo \textit {firmware}  para el ESP32.
+ \item Riesgo Alto (5): Para controlar los equipos HVAC se requiere una modificación en el codigo de la API.
+\end{itemize}
+\textit {Story points} 15 (5 + 5 + 5 = 15 => 21) La ponderación es  de 15 puntos. Al buscarlo en la serie de Fibonacci el valor es de 21 puntos.
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
@@ -321,7 +349,6 @@ Los entregables del proyecto son:
 	\item Código fuente de la base de datos.
 	\item Diagrama de instalación
 	\item Informe final
-	\item etc...
 \end{itemize}
 
 
